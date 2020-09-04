@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "90d520c2-39e1-4a43-bb30-c95059059d7b",
+		"name": "d3.ru",
+		"description": "# Эй Пи Ай\n## Программный интерфейс d3.ru — сайта в интернете для всех\n\nЭто страница предназначена для разработчиков. С помощью этой страницы разработчики могут делать различные вещи: например, могут написать бота, который автоматически ставит теги, или свое приложение для iOS, которое фильтрует все посты по словосочетанию «Дональд Трамп», и всякое такое.\n\nНиже вы найдете список возможных запросов к серверу и примеры ответов на эти запросы.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Аутентификация",
+			"item": [
+				{
+					"name": "Аутентифицироваться по логину и паролю",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://d3.ru/api/auth/login/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						},
+						"description": "Получить значения загловков `X-Futuware-UID` и `X-Futuware-SID` для совершения авторизованных запросов"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Посты",
+			"item": [
+				{
+					"name": "Получить список постов со всех поддоменов",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/posts/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Черновики",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Моё",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Комментарии",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Пользователь",
+			"item": [
+				{
+					"name": "Получить список банов пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/bans/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"bans",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить список постов пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/posts/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по постам пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/posts/search/?q=бегемот",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"posts",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "бегемот"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить список комментариев пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/comments/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по комментариям пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/comments/search/?q=спасибо",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"comments",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "спасибо"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить список доменов пользователя",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/domains/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"domains",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить список избранных постов пользователя",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Futuware-SID",
+								"value": "{{sid}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Futuware-UID",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://d3.ru/api/users/{{username}}/favourites/posts/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{username}}",
+								"favourites",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Начать игнорировать пользователя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Futuware-SID",
+								"value": "{{sid}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Futuware-UID",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://d3.ru/api/users/watan/ignore/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"watan",
+								"ignore",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Перестать игнорировать пользователя",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Futuware-SID",
+								"value": "{{sid}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Futuware-UID",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://d3.ru/api/users/watan/ignore/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"watan",
+								"ignore",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Подписки",
+			"item": [
+				{
+					"name": "Получить список постов на которые подписан пользователь",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Futuware-SID",
+								"value": "{{sid}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Futuware-UID",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://d3.ru/api/posts/subscriptions/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"posts",
+								"subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Поддомены",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Голосование",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Инбоксы",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Трансляции",
+			"item": [],
+			"description": "Это особый тип поста.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Уведомления",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Media",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Автокомплит",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Заметки",
+			"item": [
+				{
+					"name": "Получить заметки о себе",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Futuware-SID",
+								"value": "{{sid}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Futuware-UID",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://d3.ru/api/user_notes/?user_login={{username}}&page=1",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"api",
+								"user_notes",
+								""
+							],
+							"query": [
+								{
+									"key": "user_login",
+									"value": "{{username}}"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AJAX",
+			"item": [
+				{
+					"name": "Получить информацию о пользователе по ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "{{uid}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://d3.ru/ajax/user/get/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"ajax",
+								"user",
+								"get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Забанить пользователя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "uid={{uid}};sid={{sid}};",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "users",
+									"value": "watan",
+									"description": "Список пользователей через запятую.",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "хуй",
+									"type": "text"
+								},
+								{
+									"key": "csrf_token",
+									"value": "{{csrf_token}}",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{domain}}.d3.ru/ajax/user/ban/new/",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"d3",
+								"ru"
+							],
+							"path": [
+								"ajax",
+								"user",
+								"ban",
+								"new",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Разбанить пользователя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "uid={{uid}};sid={{sid}};"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "users",
+									"value": "watan",
+									"type": "text"
+								},
+								{
+									"key": "csrf_token",
+									"value": "{{csrf_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{domain}}.d3.ru/ajax/user/ban/delete/",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"d3",
+								"ru"
+							],
+							"path": [
+								"ajax",
+								"user",
+								"ban",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить голоса на выборах",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d3.ru/ajax/democracy/last-votes/?offset=0&domain=leprosorium",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"ajax",
+								"democracy",
+								"last-votes",
+								""
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "domain",
+									"value": "leprosorium"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Незадокументированый API, по адресу https://d3.ru/ajax/*",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96e0bed0-6571-40a4-9e2e-0ab101322f83",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1cf01351-7a94-43f7-bb19-3a25039efc93",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0ea86df3-4456-42f5-aad9-c60e1848c8c8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d119bf76-076c-40cc-8499-94fd742d77da",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0c787e09-4961-491b-a8e4-b683ba66ea25",
+			"key": "\n",
+			"value": "0",
+			"disabled": true
+		},
+		{
+			"id": "d35c45a6-7e67-4260-b025-3e65d9443a7a",
+			"value": "0",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}
