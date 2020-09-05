@@ -533,7 +533,7 @@
 								},
 								{
 									"key": "reason",
-									"value": "хуй",
+									"value": "because I can",
 									"type": "text"
 								},
 								{
@@ -643,6 +643,44 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Получить список игнорируемых пользователей",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "uid={{uid}};sid={{sid}};",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrf_token",
+									"value": "{{csrf_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://d3.ru/ajax/users/ignored/",
+							"protocol": "https",
+							"host": [
+								"d3",
+								"ru"
+							],
+							"path": [
+								"ajax",
+								"users",
+								"ignored",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "Незадокументированый API, по адресу https://d3.ru/ajax/*",
@@ -695,13 +733,13 @@
 	],
 	"variable": [
 		{
-			"id": "0c787e09-4961-491b-a8e4-b683ba66ea25",
+			"id": "83b9302c-d5d4-43ee-a347-e5dfaa974be7",
 			"key": "\n",
 			"value": "0",
 			"disabled": true
 		},
 		{
-			"id": "d35c45a6-7e67-4260-b025-3e65d9443a7a",
+			"id": "e966f70d-d8a2-4010-b891-4e8722d6bfaf",
 			"value": "0",
 			"disabled": true
 		}
